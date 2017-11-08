@@ -1,5 +1,8 @@
-<h1><%= @author.name %></h1>
-<p>Posts:</p>
-<% @author.posts.each do |post| %>
-  <div><%= post.title %></div>
+<% title "All authors" %>
+<% @authors.each do |author| %>
+  <h1><%= author.name %></h1>
+  <p>Posts:</p>
+  <% author.posts.each do |post| %>
+    <div><%= post.title %> - <%= last_updated post %></div>
+  <% end %>
 <% end %>
