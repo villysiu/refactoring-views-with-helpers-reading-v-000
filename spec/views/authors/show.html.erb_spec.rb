@@ -4,12 +4,12 @@ require 'rails_helper'
 #  pending "add some examples to (or delete) #{__FILE__}"
 #end
 
-RSpec.describe "show_authors" do
+RSpec.describe "Author" do
   let(:author){ Author.create(name: 'Bobby Brown', genre: 'scifi', bio: 'not available yet') }
 
   it "renders author information" do
     view.lookup_context.prefixes = %w[authors]
-    assign(:author, author)
+    assign(:authors, authors)
     render :template => "authors/show.html.erb"
     expect(rendered).to include('Bobby')
   end
