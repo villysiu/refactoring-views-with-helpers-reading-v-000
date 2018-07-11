@@ -5,12 +5,19 @@ require 'rails_helper'
 #end
 
 RSpec.describe "Author" do
-  let(:author){ Author.create(name: 'Bobby Brown', genre: 'scifi', bio: 'not available yet') }
+  describe 'search' do
+    let(:author_names) { ['Bob', 'Robert', 'Roberta', 'Shirley', 'Shelby'] }
+
+    before do
+      author_names.each do |name|
+        Author.create(name: name, genre: 'scifi')
+      end
+    end
 
   it "renders author information" do
     view.lookup_context.prefixes = %w[authors]
-    assign(:authors, authors)
+    assign(:authors, Author.all)
     render :template => "authors/show.html.erb"
-    expect(rendered).to include('Bobby')
+    expect(rendered).to include('Bob')
   end
 end
