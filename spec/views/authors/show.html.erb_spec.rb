@@ -5,7 +5,7 @@ require 'rails_helper'
 #end
 
 RSpec.describe "show_authors" do
-  let(:author){ Author.create(name: 'Bobby', genre: 'scifi', bio: 'not available yet') }
+  let(:author){ Author.create(name: 'Bobby Brown', genre: 'scifi', bio: 'not available yet') }
 
   it "renders author information" do
     view.lookup_context.prefixes = %w[authors]
