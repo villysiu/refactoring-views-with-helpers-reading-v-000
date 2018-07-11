@@ -21,3 +21,4 @@ RSpec.describe "Author" do
     expect(rendered).to include('Bob')
   end
 end
+end
