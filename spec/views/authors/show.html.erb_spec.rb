@@ -5,7 +5,7 @@ require 'rails_helper'
 #end
 
 RSpec.describe "Author" do
-  describe 'search' do
+  describe 'view' do
     let(:author_names) { ['Bob', 'Robert', 'Roberta', 'Shirley', 'Shelby'] }
 
     before do
